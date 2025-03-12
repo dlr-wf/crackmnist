@@ -1,7 +1,7 @@
 import os
 import warnings
 
-__version__ = "0.0.1"
+__version__ = "1.0.0"
 
 
 def get_default_root():
@@ -62,4 +62,4 @@ INFO = {
     }
 }
 
-HOMEPAGE = "https://github.com/dlr-wf/CrackMNIST/"
+HOMEPAGE = "https://github.com/dlr-wf/crackmnist/"
