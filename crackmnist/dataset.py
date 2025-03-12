@@ -62,7 +62,7 @@ class CrackMNIST(Dataset):
         try:
             download_url(
                 url=self.info[f"url_{self.pixels}_{self.size}"],
-                root=self.root,
+                root=self.download_path,
                 filename=f"{self.flag}_{self.pixels}_{self.size}.h5",
                 md5=self.info[f"MD5_{self.pixels}_{self.size}"],
             )
