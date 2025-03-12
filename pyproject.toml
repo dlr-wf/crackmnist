@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "crackmnist"
+authors = [
+    {name = "David Melching", email = "David.Melching@dlr.de"},
+    {name = "Erik Schultheis"},
+    {name = "Florian Paysan"},
+    {name = "Ferdinand Dömling"},
+    {name = "Eric Dietrich"},
+    {name = "Eric Breitbarth", email = "Eric.Breitbarth@dlr.de"},
+]
+description = "CrackMNIST: Datasets of interpolated digital image correlation data of fatigue crack growth experiments"
+readme = "README.md"
+requires-python = ">=3.8"
+keywords = ["MNIST", "Crack Tip Detection", "Fatigue", "Digital Image Correlation"]
+license = {text = ""}
+classifiers = [
+    "Programming Language :: Python :: 3",
+]
+dependencies = [
+    "torch",
+    "numpy",
+    "torchvision",
+    "alive-progress",
+    "h5py",
+]
+dynamic = ["version"]
+
+[tool.setuptools.dynamic]
+version = {attr = "crackmnist.info.__version__"}
+
+[project.urls]
+Repository = "https://github.com/dlr-wf/crackmnist/"
+Issues = "https://github.com/dlr-wf/crackmnist/issues"

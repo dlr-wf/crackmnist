@@ -1,0 +1,53 @@
+{
+    "S": {
+        "train": [
+            "MT160_2024_LT_1_right",
+            "MT160_2024_LT_3_right"
+        ],
+        "val": [
+            "3D_DIC_1221EBr0008_left"
+        ],
+        "test": [
+            "MT160_2024_TL_1_right"
+        ]
+    },
+
+    "M": {
+        "train": [
+            "MT160_2024_LT_3_right",
+            "MT160_2024_LT_3_left",
+            "MT160_2024_TL_2_right",
+            "MT160_7475_LT_1_right"
+        ],
+        "val": [
+            "MT160_2024_TL_2_left",
+            "MT160_7475_LT_1_left"
+        ],
+        "test": [
+            "MT160_2024_TL_1_right",
+            "MT160_7475_TL_1_left"
+        ]
+    },
+
+    "L": {
+        "train": [
+            "MT160_2024_LT_1_right",
+            "MT160_2024_LT_1_left",
+            "MT160_2024_LT_2_right",
+            "MT160_2024_LT_2_left",
+            "MT160_2024_LT_3_right",
+            "MT160_2024_LT_3_left",
+            "MT160_2024_TL_2_right",
+            "MT160_7475_LT_1_right"
+        ],
+        "val": [
+            "MT160_2024_TL_2_left",
+            "MT160_7475_LT_1_left"
+        ],
+        "test": [
+            "MT160_2024_TL_1_right",
+            "CT75_7010_SL45_1_right",
+            "MT160_7475_TL_1_left"
+        ]
+    }
+}

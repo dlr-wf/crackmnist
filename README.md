@@ -1,0 +1,173 @@
+# CrackMNIST -  A Large-Scale Dataset for Crack Tip Detection in Digital Image Correlation Data
+
+
+## Introduction
+
+Fatigue crack growth (FCG) experiments play a crucial role in materials science and engineering, 
+particularly for the safe design of structures and components. However, conventional FCG 
+experiments are both time-consuming and costly, relying primarily on integral measurement 
+techniques such as the potential drop method to determine crack length.
+
+Digital Image Correlation (DIC) is a non-contact optical technique that enables full-field 
+displacement measurements during experiments [1]. Accurately identifying crack tip positions from 
+DIC data is essential but challenging due to inherent noise and artifacts.
+
+Recently, a deep learning-based approach was introduced to automatically detect crack tip 
+positions [2, 3]. This method involved manually annotating a single experiment to train a 
+convolutional neural network (CNN). Furthermore, an iterative crack tip correction technique 
+was later developed to enhance detection accuracy [4]. However, this method is not fully 
+automated and requires more time than applying a pre-trained CNN. With the rise of self-driven 
+laboratories generating vast amounts of DIC data [5], reliable crack tip detection is essential 
+for efficient and rapid data evaluation.
+
+**References:**
+
+1. **Mokhtarishirazabad, M. et al. (2016)** Evaluation of crack-tip fields from DIC data: A parametric study.
+    _International Journal of Fatigue, 89, 11--19_ 
+2. **Strohmann T et al. (2021)** Automatic detection of fatigue crack paths using digital image correlation and 
+   convolutional neural networks.
+   _Fatigue and Fracture of Engineering Materials and Structures 44: 1336-1348_
+   [https://doi.org/10.1111/ffe.13433](https://doi.org/10.1111/ffe.13433)
+3. **Melching D et al. (2022)** Explainable machine learning for precise faticue crack tip detection. 
+   _Scientific Reports 12, 9513_ 
+   [https://doi.org/10.1038/s41598-022-13275-1](https://doi.org/10.1038/s41598-022-13275-1)
+4. **Melching D et al. (2024)** An iterative crack tip correction algorithm discovered by physical deep symbolic regression.
+    _International Journal of Fatigue, 187, 108432_
+    [https://doi.org/10.1016/j.ijfatigue.2024.108432](https://doi.org/10.1016/j.ijfatigue.2024.108432)
+5. **Paysan F et al. (2023)** A Robot-Assisted Microscopy System for Digital Image Correlation in Fatigue Crack Growth Testing.
+    _Experimental Mechanics, 63, 975-986_
+    [https://doi.org/10.1007/s11340-023-00964-9](https://doi.org/10.1007/s11340-023-00964-9)
+
+
+## Objective
+The objective of this project is to create a diverse, large-scale, and standardized dataset designed for the training 
+and evaluation of deep learning-based crack tip detection methods. In addition to supporting research and practical 
+applications, the dataset aims to serve an educational purpose by providing a high-quality resource for students and 
+researchers in the field of material science and mechanics.
+
+### DIC data
+The dataset contains DIC data in the form of planar displacement fields ($u_x, u_y$) both measured in $mm$ 
+from eight FCG experiments performed on different materials and specimen geometries. 
+The tested materials (AA2024, AA7475 and AA7010) are high-strength aluminum alloys with average an Young's modulus (E) 
+of 70 GPa and a Poisson’s ratio (ν) of 0.33. For details, please refer to the corresponding data sheets.
+
+The applied maximum nominal uniform stress for MT-Specimen is  σ<sub>N</sub> is 47 MPa (sinusoidal loading, constant amplitude). 
+The minimum load can be derived from R=F<sub>min</sub>/F<sub>max</sub>. 
+The expected Stress Intensity Factors K<sub>I</sub> vary approximately between 1 and 40 MPa√m. 
+
+| Experiment       |      Material      | Specimen Type | Thickness [mm] | Orientation |  R  |
+|------------------|:------------------:|:-------------:|:--------------:|:-----------:|:---:|
+| MT160_2024_LT_1  | AA2024<sup>r</sup> |     MT160     |       2        |     LT      | 0.1 |
+| MT160_2024_LT_2  | AA2024<sup>r</sup> |     MT160     |       2        |     LT      | 0.3 |
+| MT160_2024_LT_3  | AA2024<sup>r</sup> |     MT160     |       2        |     LT      | 0.5 |
+| MT160_2024_TL_1  | AA2024<sup>r</sup> |     MT160     |       2        |     TL      | 0.1 |
+| MT160_2024_TL_2  | AA2024<sup>r</sup> |     MT160     |       2        |     TL      | 0.3 |
+| MT160_7475_LT_1  | AA7475<sup>r</sup> |     MT160     |       4        |     LT      | 0.1 |
+| MT160_7475_TL_1  | AA7475<sup>r</sup> |     MT160     |       4        |     TL      | 0.3 |
+| CT75_7010_SL45_1 | AA7010<sup>f</sup> |     CT75      |       12       |    SL45°    | 0.1 |
+
+---
+<sup>r</sup> Rolled Material
+<sup>f</sup> Forged Material
+
+### Data annotation
+Crack tip positions in the DIC data are annotated with the high-fidelity crack tip correction method 
+from [4] (see Figure below).
+
+![Crack tip annotation](./docs/crack_tip_correction_framework.png)
+
+The crack tip positions are stored as binary segmentation masks such that the labelled datasets
+can directly be used for training semantic segmentation models.
+
+### Labelled datasets
+We provide three datasets of different sizes ("S", "M", "L"). 
+The datasets are split into training, validation, and test sets.
+The following table shows the number of samples in each dataset.
+
+| Dataset | Training | Validation | Test  |
+|---------|----------|------------|-------|
+| S       | 10048    | 5944       | 5944  |
+| M       | 21672    | 11736      | 11672 |
+| L       | 42088    | 11736      | 16560 |
+
+The datasets are provided in four different pixel resolutions ($28 \times 28$, $64 \times 64$, 
+$128 \times 128$, $256 \times 256$) and stored in HDF5 format.
+
+An overview which experiment is included in which dataset for training, validation and testing
+can be found in the file `size_splits.json`.
+
+### Visualization of labelled data samples
+The following figure shows examples of labelled data samples from the CrackMNIST dataset.
+
+![CrackMNIST samples](./docs/crackmnist_samples.png)
+
+The inputs consist of the planar displacement fields ($u_x, u_y$), and the outputs are the binary 
+segmentation masks.
+
+### Visualization of different pixel resolutions
+The figure below shows the y-displacement field of a DIC sample at different pixel resolutions.
+
+![DIC pixel resolutions](./docs/crackmnist_resolution.png)
+
+
+## Usage
+
+### Installation
+
+The package can be installed via pip:
+```bash
+pip install crackmnist
+```
+Datasets are uploaded to Zenodo and are downloaded automatically upon usage.
+
+### Getting started
+The datasets can be loaded using the implemented class CrackMNIST as follows
+```python
+from crackmnist import CrackMNIST
+
+train_dataset = CrackMNIST(split="train", pixels=28, size="S")
+```
+Here, the parameters `split`, `pixels`, and `size` specify the dataset split, 
+and pixel resolution, respectively.
+
+The folder `examples` contains a Jupyter notebook `getting_started.ipyb` that demonstrates how to
+train a simple U-Net segmentation model, and evaluate and visualize the results.
+
+
+## Contributors
+
+Code implementation and data annotation by:
+- Erik Schultheis
+- David Melching
+
+Experiment conduction and DIC data acquisition by:
+- Florian Paysan
+- Ferdinand Dömling
+- Eric Dietrich
+
+Supervision and conceptualization by:
+- [David Melching](mailto:David.Melching@dlr.de)
+- [Eric Breitbarth](mailto:Eric.Breitbarth@dlr.de)
+
+
+## Citation
+If you use the dataset in your research, please cite this GitHub repository:
+
+```bibtex
+@misc{crackmnist,
+  title={Crack-MNIST: A Large-Scale Dataset for Crack Tip Detection in Digital Image Correlation Data},
+  author={David Melching and Erik Schultheis and Florian Paysan and Ferdinand Dömling and Eric Dietrich and Eric Breitbarth},
+  journal={GitHub repository},
+  howpublished={\url{https://www.github.com/dlr-wf/crackmnist}},
+  year={2025}
+}
+```
+
+## License and Limitations
+The package is developed for research and educational purposes only and must not be used 
+for any production or specification purposes. We do not guarantee in any form 
+for its flawless implementation and execution. However, if you run into errors in the code or 
+find any bugs, feel free to cantact us.
+
+The code is licensed under MIT License (see LICENSE file).
+The datasets are licensed under Creative Commons Attribution 4.0 International License (CC BY 4.0).
