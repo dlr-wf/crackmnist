@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "If you use this package, please cite it as below."
+authors:
+- family-names: "Melching"
+  given-names: "David"
+  orcid: "https://orcid.org/0000-0001-5111-6511"
+- family-names: "Schultheis"
+  given-names: "Erik"
+  orcid: "https://orcid.org/0009-0007-4728-7124"
+- family-names: "Paysan"
+  given-names: "Florian"
+- family-names: "Dömling"
+  given-names: "Ferdinand"
+- family-names: "Dietrich"
+  given-names: "Eric"
+- family-names: "Breitbarth"
+  given-names: "Eric"
+  orcid: "https://orcid.org/0000-0002-3479-9143"
+title: "CrackMNIST - A Large-Scale Dataset for Crack Tip Detection in Digital Image Correlation Data"
+version: 1.0.0
+doi: XXXX
+date-released: 2025-03-12
+url: "https://github.com/dlr-wf/crackmnist"
