@@ -1,5 +1,4 @@
 import os
-import numpy as np
 import h5py
 from torch.utils.data import Dataset
 from torchvision.datasets.utils import download_url
@@ -54,6 +53,12 @@ class CrackMNIST(Dataset):
         ):
             return
 
+        if self.pixels == 256 and self.size in ["M", "L"]:
+            raise RuntimeError(
+                f"{self.flag}_{self.pixels}_{self.size}.h5 is not available on Zenodo. "
+                f"Please contact the authors to get access."
+            )
+
         try:
             download_url(
                 url=self.info[f"url_{self.pixels}_{self.size}"],
@@ -64,14 +69,14 @@ class CrackMNIST(Dataset):
         except Exception as e:
             raise RuntimeError(
                 f"""
-                Automatic download failed! Please download crackmnist_{self.size}.npz manually.
+                Automatic download failed! Please download {self.flag}_{self.pixels}_{self.size}.h5 manually.
                 1. [Optional] Check your network connection: 
                     Go to {HOMEPAGE} and find the Zenodo repository
-                2. Download the npz file from the Zenodo repository or its Zenodo data link: 
+                2. Download the h5-file from the Zenodo repository or its Zenodo data link: 
                     {self.info[f"url_{self.pixels}_{self.size}"]}
                 3. [Optional] Verify the MD5: 
                     {self.info[f"MD5_{self.pixels}_{self.size}"]}
-                4. Put the npz file under your CrackMNIST root folder: 
+                4. Put the h5-file under your CrackMNIST root folder: 
                     {self.download_path}
                 """
             ) from e
