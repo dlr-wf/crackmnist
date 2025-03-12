@@ -11,34 +11,35 @@ experiments are both time-consuming and costly, relying primarily on integral me
 techniques such as the potential drop method to determine crack length.
 
 Digital Image Correlation (DIC) is a non-contact optical technique that enables full-field 
-displacement measurements during experiments [1]. Accurately identifying crack tip positions from 
+displacement measurements during experiments. Accurately identifying crack tip positions from 
 DIC data is essential but challenging due to inherent noise and artifacts.
 
 Recently, a deep learning-based approach was introduced to automatically detect crack tip 
-positions [2, 3]. This method involved manually annotating a single experiment to train a 
+positions [1,2]. This method involved manually annotating a single experiment to train a 
 convolutional neural network (CNN). Furthermore, an iterative crack tip correction technique 
-was later developed to enhance detection accuracy [4]. However, this method is not fully 
+was later developed to enhance detection accuracy [3]. However, this method is not fully 
 automated and requires more time than applying a pre-trained CNN. With the rise of self-driven 
-laboratories generating vast amounts of DIC data [5], reliable crack tip detection is essential 
+laboratories generating vast amounts of DIC data [4,5], reliable crack tip detection is essential 
 for efficient and rapid data evaluation.
 
 **References:**
 
-1. **Mokhtarishirazabad, M. et al. (2016)** Evaluation of crack-tip fields from DIC data: A parametric study.
-    _International Journal of Fatigue, 89, 11--19_ 
-2. **Strohmann T et al. (2021)** Automatic detection of fatigue crack paths using digital image correlation and 
+1. **Strohmann T et al. (2021)** Automatic detection of fatigue crack paths using digital image correlation and 
    convolutional neural networks.
    _Fatigue and Fracture of Engineering Materials and Structures 44: 1336-1348_
    [https://doi.org/10.1111/ffe.13433](https://doi.org/10.1111/ffe.13433)
-3. **Melching D et al. (2022)** Explainable machine learning for precise faticue crack tip detection. 
+2. **Melching D et al. (2022)** Explainable machine learning for precise faticue crack tip detection. 
    _Scientific Reports 12, 9513_ 
    [https://doi.org/10.1038/s41598-022-13275-1](https://doi.org/10.1038/s41598-022-13275-1)
-4. **Melching D et al. (2024)** An iterative crack tip correction algorithm discovered by physical deep symbolic regression.
+3. **Melching D et al. (2024)** An iterative crack tip correction algorithm discovered by physical deep symbolic regression.
     _International Journal of Fatigue, 187, 108432_
     [https://doi.org/10.1016/j.ijfatigue.2024.108432](https://doi.org/10.1016/j.ijfatigue.2024.108432)
-5. **Paysan F et al. (2023)** A Robot-Assisted Microscopy System for Digital Image Correlation in Fatigue Crack Growth Testing.
+4. **Paysan F et al. (2023)** A Robot-Assisted Microscopy System for Digital Image Correlation in Fatigue Crack Growth Testing.
     _Experimental Mechanics, 63, 975-986_
     [https://doi.org/10.1007/s11340-023-00964-9](https://doi.org/10.1007/s11340-023-00964-9)
+5. **Strohmann T et al. (2024)** Next generation fatigue crack growth experiments of aerospace materials.
+    _Scientific Reports 14, 14075_
+    [https://doi.org/10.1038/s41598-024-63915-x](https://doi.org/10.1038/s41598-024-63915-x) 
 
 
 ## Objective
@@ -50,8 +51,9 @@ researchers in the field of material science and mechanics.
 ### DIC data
 The dataset contains DIC data in the form of planar displacement fields ($u_x, u_y$) both measured in $mm$ 
 from eight FCG experiments performed on different materials and specimen geometries. 
-The tested materials (AA2024, AA7475 and AA7010) are high-strength aluminum alloys with average an Young's modulus (E) 
-of 70 GPa and a Poisson’s ratio (ν) of 0.33. For details, please refer to the corresponding data sheets.
+The tested materials (AA2024, AA7475 and AA7010) are aluminum alloys with an average Young's modulus (E) 
+of approximately 70 GPa and a Poisson’s ratio (ν) of 0.33. 
+For details, please refer to the corresponding data sheets.
 
 The applied maximum nominal uniform stress for MT-Specimen is  σ<sub>N</sub> is 47 MPa (sinusoidal loading, constant amplitude). 
 The minimum load can be derived from R=F<sub>min</sub>/F<sub>max</sub>. 
@@ -74,7 +76,7 @@ The expected Stress Intensity Factors K<sub>I</sub> vary approximately between 1
 
 ### Data annotation
 Crack tip positions in the DIC data are annotated with the high-fidelity crack tip correction method 
-from [4] (see Figure below).
+from [3] (see Figure below).
 
 ![Crack tip annotation](./docs/crack_tip_correction_framework.png)
 
@@ -169,7 +171,7 @@ If you use the dataset or code in your research, please cite this GitHub reposit
 The package is developed for research and educational purposes only and must not be used 
 for any production or specification purposes. We do not guarantee in any form 
 for its flawless implementation and execution. However, if you run into errors in the code or 
-find any bugs, feel free to cantact us.
+find any bugs, feel free to contact us.
 
 The code is licensed under MIT License (see LICENSE file).
 The datasets are licensed under Creative Commons Attribution 4.0 International License (CC BY 4.0).
