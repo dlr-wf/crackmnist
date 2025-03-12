@@ -152,11 +152,11 @@ Supervision and conceptualization by:
 
 
 ## Citation
-If you use the dataset in your research, please cite this GitHub repository:
+If you use the dataset or code in your research, please cite this GitHub repository:
 
 ```bibtex
 @misc{crackmnist,
-  title={Crack-MNIST: A Large-Scale Dataset for Crack Tip Detection in Digital Image Correlation Data},
+  title={Crack-MNIST - A Large-Scale Dataset for Crack Tip Detection in Digital Image Correlation Data},
   author={David Melching and Erik Schultheis and Florian Paysan and Ferdinand Dömling and Eric Dietrich and Eric Breitbarth},
   journal={GitHub repository},
   howpublished={\url{https://www.github.com/dlr-wf/crackmnist}},
