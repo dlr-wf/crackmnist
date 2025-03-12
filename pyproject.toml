@@ -12,7 +12,7 @@ authors = [
     {name = "Eric Dietrich"},
     {name = "Eric Breitbarth", email = "Eric.Breitbarth@dlr.de"},
 ]
-description = "CrackMNIST: Datasets of interpolated digital image correlation data of fatigue crack growth experiments"
+description = "CrackMNIST - A Large-Scale Dataset for Crack Tip Detection in Digital Image Correlation Data"
 readme = "README.md"
 requires-python = ">=3.8"
 keywords = ["MNIST", "Crack Tip Detection", "Fatigue", "Digital Image Correlation"]
