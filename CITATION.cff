@@ -18,6 +18,6 @@ authors:
   orcid: "https://orcid.org/0000-0002-3479-9143"
 title: "CrackMNIST - A Large-Scale Dataset for Crack Tip Detection in Digital Image Correlation Data"
 version: 1.0.0
-doi: XXXX
+doi: 10.5281/zenodo.15013128
 date-released: 2025-03-12
 url: "https://github.com/dlr-wf/crackmnist"
