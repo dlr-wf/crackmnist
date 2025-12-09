@@ -14,18 +14,18 @@ authors = [
 ]
 description = "CrackMNIST - A Large-Scale Dataset for Crack Tip Detection in Digital Image Correlation Data"
 readme = "README.md"
-requires-python = ">=3.8"
+requires-python = "~=3.12"
 keywords = ["MNIST", "Crack Tip Detection", "Fatigue", "Digital Image Correlation"]
 license = {file = "LICENSE"}
 classifiers = [
     "Programming Language :: Python :: 3",
 ]
 dependencies = [
-    "torch~=2.5.1",
-    "numpy~=2.1.3",
-    "torchvision~=0.20.1",
-    "alive-progress~=3.2.0",
-    "h5py~=3.12.1",
+    "torch~=2.9.1",
+    "torchvision~=0.24.1",
+    "numpy~=2.3.5",
+    "matplotlib~=3.10.17",
+    "h5py~=3.15.1",
 ]
 dynamic = ["version"]
 
