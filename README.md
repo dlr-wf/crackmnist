@@ -44,9 +44,9 @@ for efficient and rapid data evaluation.
 
 ## Objective
 The objective of this project is to create a diverse, large-scale, and standardized dataset designed for the training 
-and evaluation of deep learning-based crack tip detection methods. In addition to supporting research and practical 
-applications, the dataset aims to serve an educational purpose by providing a high-quality resource for students and 
-researchers in the field of material science and mechanics.
+and evaluation of deep learning-based crack tip detection and stress intensity factor (SIF) prediction methods. 
+In addition to supporting research and practical applications, the dataset aims to serve an educational purpose by 
+providing a high-quality resource for students and researchers in the field of material science and mechanics.
 
 ### DIC data
 The dataset contains DIC data in the form of planar displacement fields ($u_x, u_y$) both measured in $mm$ 
@@ -82,6 +82,17 @@ from [3] (see Figure below).
 
 The crack tip positions are stored as binary segmentation masks such that the labelled datasets
 can directly be used for training semantic segmentation models.
+
+### Stress Intensity Factors (SIFs)
+In addition to crack tip segmentation masks, the dataset includes corresponding stress intensity factors (SIFs) 
+for each sample. The SIFs consist of three components:
+- **K<sub>I</sub>**: Mode I stress intensity factor (opening mode)
+- **K<sub>II</sub>**: Mode II stress intensity factor (shear mode)  
+- **T**: T-stress (non-singular stress component)
+
+All SIF values are provided in units of MPa√m for K<sub>I</sub> and K<sub>II</sub>, and MPa for T-stress.
+These values enable the dataset to be used for regression tasks, allowing neural networks to predict 
+fracture mechanics parameters directly from displacement fields.
 
 ### Labelled datasets
 We provide three datasets of different sizes ("S", "M", "L"). 
@@ -129,13 +140,22 @@ The datasets can be loaded using the implemented class CrackMNIST as follows
 ```python
 from crackmnist import CrackMNIST
 
-train_dataset = CrackMNIST(split="train", pixels=28, size="S")
-```
-Here, the parameters `split`, `pixels`, and `size` specify the dataset split, 
-and pixel resolution, respectively.
+# Load dataset for crack tip segmentation
+train_dataset = CrackMNIST(split="train", pixels=28, size="S", task="crack_tip_segmentation")
 
-The folder `examples` contains a Jupyter notebook `getting_started.ipyb` that demonstrates how to
-train a simple U-Net segmentation model, and evaluate and visualize the results.
+# Load dataset for SIF regression
+sif_dataset = CrackMNIST(split="train", pixels=28, size="S", task="SIF_regression")
+```
+Here, the parameters `split`, `pixels`, `size`, and `task` specify the dataset split, 
+pixel resolution, dataset size, and task type, respectively.
+
+Available tasks:
+- `"crack_tip_segmentation"`: Binary segmentation masks for crack tip location (default)
+- `"SIF_regression"`: Stress intensity factors (K<sub>I</sub>, K<sub>II</sub>, T-stress) as regression targets
+
+The folder `examples` contains Jupyter notebooks:
+- `getting_started.ipynb`: Demonstrates the dataset structure and visualization of both crack tip masks and SIF values
+- `plot_samples.ipynb`: Additional examples for visualizing dataset samples
 
 
 ## Contributors
