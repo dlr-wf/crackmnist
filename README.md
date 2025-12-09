@@ -141,7 +141,7 @@ The datasets can be loaded using the implemented class CrackMNIST as follows
 from crackmnist import CrackMNIST
 
 # Load dataset for crack tip segmentation
-train_dataset = CrackMNIST(split="train", pixels=28, size="S", task="crack_tip_segmentation")
+ct_dataset = CrackMNIST(split="train", pixels=28, size="S", task="crack_tip_segmentation")
 
 # Load dataset for SIF regression
 sif_dataset = CrackMNIST(split="train", pixels=28, size="S", task="SIF_regression")
