@@ -6,13 +6,13 @@ build-backend = "setuptools.build_meta"
 name = "crackmnist"
 authors = [
     {name = "David Melching", email = "David.Melching@dlr.de"},
-    {name = "Erik Schultheis"},
-    {name = "Florian Paysan"},
     {name = "Ferdinand Dömling"},
+    {name = "Florian Paysan"},
+    {name = "Erik Schultheis"},
     {name = "Eric Dietrich"},
     {name = "Eric Breitbarth", email = "Eric.Breitbarth@dlr.de"},
 ]
-description = "CrackMNIST - A Large-Scale Dataset for Crack Tip Detection in Digital Image Correlation Data"
+description = "CrackMNIST - Annotated Digital Image Correlation Displacement Fields from Fatigue Crack Growth Experiments"
 readme = "README.md"
 requires-python = "~=3.12"
 keywords = ["MNIST", "Crack Tip Detection", "Fatigue", "Digital Image Correlation"]
