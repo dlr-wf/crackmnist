@@ -1,4 +1,4 @@
-# CrackMNIST -  A Large-Scale Dataset for Crack Tip Detection in Digital Image Correlation Data
+# CrackMNIST - Annotated Digital Image Correlation Displacement Fields from Fatigue Crack Growth Experiments
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15013128.svg)](https://doi.org/10.5281/zenodo.15013128)
 [![DOI](https://zenodo.org/badge/947320360.svg)](https://doi.org/10.5281/zenodo.15013922)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -105,8 +105,8 @@ The following table shows the number of samples in each dataset.
 | M       | 21672    | 11736      | 11672 |
 | L       | 42088    | 11736      | 16560 |
 
-The datasets are provided in four different pixel resolutions ($28 \times 28$, $64 \times 64$, 
-$128 \times 128$, $256 \times 256$) and stored in HDF5 format.
+The datasets are provided in three different pixel resolutions ($28 \times 28$, $64 \times 64$, 
+$128 \times 128$) and stored in HDF5 format.
 
 An overview which experiment is included in which dataset for training, validation and testing
 can be found in the file `size_splits.json`.
@@ -162,6 +162,7 @@ The folder `examples` contains Jupyter notebooks:
 
 Code implementation and data annotation by:
 - Erik Schultheis
+- Ferdinand Dömling
 - David Melching
 
 Experiment conduction and DIC data acquisition by:
@@ -179,11 +180,12 @@ If you use the dataset or code in your research, please cite this GitHub reposit
 
 ```bibtex
 @misc{crackmnist,
-  title={Crack-MNIST - A Large-Scale Dataset for Crack Tip Detection in Digital Image Correlation Data},
-  author={David Melching and Erik Schultheis and Florian Paysan and Ferdinand Dömling and Eric Dietrich and Eric Breitbarth},
+  title={CrackMNIST - Annotated Digital Image Correlation Displacement Fields from Fatigue Crack Growth Experiments},
+  author={David Melching and Ferdinand Dömling and Florian Paysan and Erik Schultheis and Eric Dietrich and Eric Breitbarth},
   journal={GitHub repository},
   howpublished={\url{https://www.github.com/dlr-wf/crackmnist}},
-  year={2025}
+  year={2026},
+  note={Version 2.0.0}
 }
 ```
 

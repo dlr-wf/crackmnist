@@ -11,7 +11,7 @@ class CrackMNIST(Dataset):
     flag = "crackmnist"
     available_splits = ["train", "val", "test"]
     available_sizes = ["S", "M", "L"]
-    available_pixels = [28, 64, 128, 256]
+    available_pixels = [28, 64, 128]
     available_tasks = ["crack_tip_segmentation", "SIF_regression"]
 
     def __init__(
@@ -78,12 +78,6 @@ class CrackMNIST(Dataset):
 
 
     def download(self):
-        if self.pixels == 256 and self.size in ["M", "L"]:
-            raise RuntimeError(
-                f"{self.flag}_{self.pixels}_{self.size}.h5 is not available on Zenodo. "
-                f"Please contact the authors to get access."
-            )
-
         if not os.path.exists(os.path.join(self.download_path, "experiments_metadata.json")):
             try:
                 download_url(

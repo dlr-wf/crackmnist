@@ -23,36 +23,35 @@ DEFAULT_ROOT = get_default_root()
 INFO = {
     "crackmnist": {
         "python_class": "CrackMNIST",
-        "description": "Digital image correlation data of fatigue crack growth experiments",
+        "description": "Annotated digital image correlation displacement fields from fatigue crack growth experiments",
 
-        "metadata_url": "",  # <-- add metadata url if available
+        "metadata_url": "https://zenodo.org/records/18454958/files/experiments_metadata.json?download=1",
 
-        "url_28_S": "https://zenodo.org/records/15013128/files/crackmnist_28_S.h5?download=1",
-        "url_64_S": "https://zenodo.org/records/15013128/files/crackmnist_64_S.h5?download=1",
-        "url_128_S": "https://zenodo.org/records/15013128/files/crackmnist_128_S.h5?download=1",
-        "url_256_S": "https://zenodo.org/records/15013128/files/crackmnist_256_S.h5?download=1",
-        "url_28_M": "https://zenodo.org/records/15013128/files/crackmnist_28_M.h5?download=1",
-        "url_64_M": "https://zenodo.org/records/15013128/files/crackmnist_64_M.h5?download=1",
-        "url_128_M": "https://zenodo.org/records/15013128/files/crackmnist_128_M.h5?download=1",
-        "url_256_M": "-",
-        "url_28_L": "https://zenodo.org/records/15013128/files/crackmnist_28_L.h5?download=1",
-        "url_64_L": "https://zenodo.org/records/15013128/files/crackmnist_64_L.h5?download=1",
-        "url_128_L": "https://zenodo.org/records/15013128/files/crackmnist_128_L.h5?download=1",
-        "url_256_L": "-",
+        "url_28_S": "https://zenodo.org/records/18454958/files/crackmnist_28_S.h5?download=1",
+        "url_64_S": "https://zenodo.org/records/18454958/files/crackmnist_64_S.h5?download=1",
+        "url_128_S": "https://zenodo.org/records/18454958/files/crackmnist_128_S.h5?download=1",
 
-        "MD5_metadata": "-", # <-- add metadata md5 if available
-        "MD5_28_S": "6db8fcb85274889f18af406cc7acead7",
-        "MD5_64_S": "a792fd1696b3f2d9d42ac52cec70f6b9",
-        "MD5_128_S": "01957bb66136725bf9d5dd4ecfbd067b",
-        "MD5_256_S": "579f127cd296638ccb15f695a8ed3e48",
-        "MD5_28_M": "58466521aa08dcc65a84d224e821985f",
-        "MD5_64_M": "7302c0b37f04d72e6dc4b953b7bd3e81",
-        "MD5_128_M": "e10197e36aa26eb51981ab92c6dea905",
-        "MD5_256_M": "-",
-        "MD5_28_L": "9e1ff7ff395b2dbeb250e0484c78d3a1",
-        "MD5_64_L": "a186337e3b8fd3b9aeee86b0e3c30c18 ",
-        "MD5_128_L": "f4568b3d80afc93eadac2524c20f67d3",
-        "MD5_256_L": "-",
+        "url_28_M": "https://zenodo.org/records/18454958/files/crackmnist_28_M.h5?download=1",
+        "url_64_M": "https://zenodo.org/records/18454958/files/crackmnist_64_M.h5?download=1",
+        "url_128_M": "https://zenodo.org/records/18454958/files/crackmnist_128_M.h5?download=1",
+
+        "url_28_L": "https://zenodo.org/records/18454958/files/crackmnist_28_L.h5?download=1",
+        "url_64_L": "https://zenodo.org/records/18454958/files/crackmnist_64_L.h5?download=1",
+        "url_128_L": "https://zenodo.org/records/18454958/files/crackmnist_128_L.h5?download=1",
+
+        "MD5_metadata": "85b558aa217c2ad659b701946c399f58",
+
+        "MD5_28_S": "26bb0aa814f2e3ed467879844222c46c",
+        "MD5_64_S": "948d0ba363b5d06a904d6cdcedc029e8",
+        "MD5_128_S": "3101a618e0837276b1ef4533964fabb3",
+
+        "MD5_28_M": "18df30fbee389def264ebfd25377e6d2",
+        "MD5_64_M": "1c4c40674d5781dc42d20627b7b460b7",
+        "MD5_128_M": "53518c6684eb006527fdf75e4efb1f5c",
+
+        "MD5_28_L": "b031a047c61bfd14ddd294a63afc94ac",
+        "MD5_64_L": "5963d788af31f4a24ebe904cb3ad43db",
+        "MD5_128_L": "5527a54cc382623edcb2022e95a9ed2d",
 
         "n_channels": 2,
         "n_samples": {
