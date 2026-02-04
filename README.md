@@ -102,8 +102,8 @@ The following table shows the number of samples in each dataset.
 | Dataset | Training | Validation | Test  |
 |---------|----------|------------|-------|
 | S       | 10048    | 5944       | 5944  |
-| M       | 21672    | 11736      | 11672 |
-| L       | 42088    | 11736      | 16560 |
+| M       | 21640    | 11736      | 11672 |
+| L       | 42056    | 11736      | 16560 |
 
 The datasets are provided in three different pixel resolutions ($28 \times 28$, $64 \times 64$, 
 $128 \times 128$) and stored in HDF5 format.
