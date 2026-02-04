@@ -1,5 +1,5 @@
 # CrackMNIST - Annotated Digital Image Correlation Displacement Fields from Fatigue Crack Growth Experiments
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15013128.svg)](https://doi.org/10.5281/zenodo.15013128)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18454958.svg)](https://doi.org/10.5281/zenodo.18454958)
 [![DOI](https://zenodo.org/badge/947320360.svg)](https://doi.org/10.5281/zenodo.15013922)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
